@@ -1,5 +1,3 @@
-const functions = require('firebase-functions')
-
 const app = require('express')()
 const { promisify } = require('util')
 const { getInfo, filterFormats } = require('ytdl-core')
@@ -50,13 +48,6 @@ app.get('/', async (req, res) => {
 	}
 })
 
-// app.listen(3000, () => {
-// 	console.log('http://localhost:3000')
-// })
-
-exports.api = functions.https.onRequest(app)
-// exports.api = functions.https.onRequest((req, res) => {
-// 	res.json({
-// 		message: 'Hello from firebase'
-// 	})
-// })
+app.listen(3000, () => {
+	console.log('http://localhost:3000')
+})
